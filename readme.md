@@ -67,6 +67,8 @@ Flow Navigation (Screen to Screen)
 
 Wireframes
 
+![](wireframe.jpg)
+
 Week 1
 - Added layout, including view controllers and tab view controller
 - No challenges; just needed to refer back to past lectures to implement tab controller
