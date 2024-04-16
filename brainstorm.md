@@ -1,4 +1,12 @@
 ## App Brainstorming
+### Initial Brainstorming
+- Restaurant Finder
+- NYC Subway Tracking
+- Duosingo
+- Travel Planning
+- Movie Picker
+- Spotify songs for different weather
+
 ### New App Ideas List
 - Restaurant Finder
     - Description: Chooses a random restaurant based on the user's preferences. Users can set the type of cuisine they desire, the maximum distance they want to travel, and the maximum price they are willing to spend.
