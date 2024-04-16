@@ -67,6 +67,12 @@ Flow Navigation (Screen to Screen)
 
 Wireframes
 
+Week 1
+- Added layout, including view controllers and tab view controller
+- No challenges; just needed to refer back to past lectures to implement tab controller
+- Next steps: add backend and implement table view for stops
+
+[Demo](https://imgur.com/a/iMp6qlh)
 
 [BONUS] Digital Wireframes & Mockups
 [BONUS] Interactive Prototype
