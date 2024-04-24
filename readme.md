@@ -22,15 +22,15 @@ Yourway is designed to fit your schedule, tracking the subway lines that you rid
 Required Must-have Stories
 
 [] User can search for subway stops
-- [] User can add subway stops
-- [] User can delete subway stops
+- [ ] User can add subway stops
+- [ ] User can delete subway stops
 - [x] User can see view schedules of their subway line for their stop
     - What time the subway comes, and how many minutes until it comes
 
 #### 1.2 Optional Nice-to-have Stories
-- [] User can toggle between time of subway arrival, estimated time of arrival (in minutes), or both
-- [] User can view the entire subway map and each station's schedules.
-- [] User can get notifications to leave in 5 minutes, in 2 minutes, etc.
+- [ ] User can toggle between time of subway arrival, estimated time of arrival (in minutes), or both
+- [ ] User can view the entire subway map and each station's schedules.
+- [ ] User can get notifications to leave in 5 minutes, in 2 minutes, etc.
 
 #### 2. Screen Archetypes
 - Subway Stops Screen (Main)
