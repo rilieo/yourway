@@ -4,6 +4,7 @@
 1. [Product Spec](#product-spec)
 1. [Wireframes](#wireframes)
 1. [Schema](#schema)
+1. [Sprints](#sprints)
 
 ### Overview
 #### 1. Description:
@@ -69,13 +70,6 @@ Flow Navigation (Screen to Screen)
 
 ![](wireframe.jpg)
 
-#### Week 1
-- Added layout, including view controllers and tab view controller
-- No challenges; just needed to refer back to past lectures to implement tab controller
-- Next steps: add backend and implement table view for stops
-
-[Demo](https://imgur.com/a/iMp6qlh)
-
 ### Schema
 
 Models
@@ -122,4 +116,20 @@ Networking
 
 ![](networking_1.png)
 ![](networking_2.png)
+
+### Sprints
+#### Week 1
+- Added layout, including view controllers and tab view controller
+- No challenges; just needed to refer back to past lectures to implement tab controller
+- Next steps: add backend and implement table view for stops
+
+[Demo](https://imgur.com/a/iMp6qlh)
+
+#### Week 2
+- Added API call and backend 
+- Fix UI
+- Implemented table view
+= Next steps: have add and delete functionality
+
+[Demo](https://imgur.com/a/Dx9o9IJ)
 
