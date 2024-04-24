@@ -1,21 +1,18 @@
-//
-//  AppDelegate.swift
-//  yourway
-//
-//  Created by Riley Dou on 4/16/24.
-//
-
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
+      func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions:
+                       [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         return true
-    }
+      }
 
     // MARK: UISceneSession Lifecycle
 
