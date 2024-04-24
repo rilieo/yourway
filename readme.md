@@ -21,16 +21,16 @@ Yourway is designed to fit your schedule, tracking the subway lines that you rid
 #### 1.1 User Stories (Required and Optional)
 Required Must-have Stories
 
-- User can search for subway stops
-- User can add subway stops
-- User can delete subway stops
-- User can see view schedules of their subway line for their stop
+[] User can search for subway stops
+[] User can add subway stops
+[] User can delete subway stops
+[x] User can see view schedules of their subway line for their stop
     - What time the subway comes, and how many minutes until it comes
-- User can toggle between time of subway arrival, estimated time of arrival (in minutes), or both
 
 #### 1.2 Optional Nice-to-have Stories
-- User can view the entire subway map and each station's schedules.
-- User can get notifications to leave in 5 minutes, in 2 minutes, etc.
+[] User can toggle between time of subway arrival, estimated time of arrival (in minutes), or both
+[] User can view the entire subway map and each station's schedules.
+[] User can get notifications to leave in 5 minutes, in 2 minutes, etc.
 
 #### 2. Screen Archetypes
 - Subway Stops Screen (Main)
@@ -77,12 +77,49 @@ Flow Navigation (Screen to Screen)
 [Demo](https://imgur.com/a/iMp6qlh)
 
 ### Schema
-[This section will be completed in Unit 9]
 
 Models
-[Add table of models]
+```
+struct Stop : Decodable {
+    let data : [SubwayStation]
+}
+
+struct RouteData : Decodable  {
+    let route : String
+    let time : String
+}
+
+struct SubwayStation : Decodable {
+    let N : [RouteData]
+    let S : [RouteData]
+    let routes : [String]
+    let lastUpdate : String
+    let id : String
+    let location : [Double]
+    let name : String
+    let stops : [String: [Double]]
+    
+    enum CodingKeys: String, CodingKey {
+        case N
+        case S
+        case routes
+        case lastUpdate = "last_update"
+        case id
+        case location
+        case name
+        case stops
+    }
+}
+```
 
 Networking
-[Add list of network requests by screen ]
-[Create basic snippets for each Parse network request]
-[OPTIONAL: List endpoints if using existing API such as Yelp]
+- DetailViewController
+    - `stop`, the station the information is requested for, is passed into the DetailViewController
+    - Request is made using [MTAPI](https://github.com/jonthornton/MTAPI) by passing in the station's latitude and longitude from `stop.location` using the endpoint `/by-location?lat=[latitude]&lon=[longitude]`
+    - Endpoint returns the 5 stations nearest the provided lat/lon pair.
+    - Request returns a JSON object that contains trains that run at the nearest 5 stops
+    - For the stops that match the stop's name, we find the next train (currently just N) and parse the times
+
+![](networking_1)
+![](networking_2)
+
