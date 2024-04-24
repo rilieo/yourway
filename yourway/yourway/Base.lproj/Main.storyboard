@@ -85,13 +85,14 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Train" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aT-45-joD">
-                                <rect key="frame" x="169" y="111" width="56" height="29"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-AC-dM2">
+                                <rect key="frame" x="76" y="103" width="240" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iYQ-WP-VkZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,7 +100,7 @@
                     <navigationItem key="navigationItem" id="6QT-gv-YiW"/>
                     <connections>
                         <outlet property="arrivalTime" destination="VLP-4C-gek" id="mih-dG-QJH"/>
-                        <outlet property="trainLabel" destination="2aT-45-joD" id="9l7-FG-sZc"/>
+                        <outlet property="trainLine" destination="rdL-AC-dM2" id="MUj-H8-vXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFs-Yy-o6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

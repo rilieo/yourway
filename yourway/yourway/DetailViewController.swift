@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var trainLabel: UILabel!
+    @IBOutlet weak var trainLine: UITextView!
     @IBOutlet weak var arrivalTime: UITextView!
     var stop: Station!
     
@@ -44,27 +44,36 @@ class DetailViewController: UIViewController {
                 let subwayStops = try JSONDecoder().decode(Stop.self, from: data)
                 
                 let stationData = subwayStops.data
+                let timePattern = #"(\d{2}:\d{2})"#
+                let charPattern = #"[^\d\s]"#
                 
+                // Iterate through all 5 stations
                 for station in stationData {
                     if (station.name == self.stop.name) {
                         
+                        // Display next train
                         if let currStation = station.N.first {
                             let timestamp = currStation.time
-                            let pattern = #"(\d{2}:\d{2})"#
                             
                             do {
-                                let regex = try NSRegularExpression(pattern: pattern, options: [])
+                                // Parse time
+                                let regex = try NSRegularExpression(pattern: timePattern, options: [])
                                 let matches = regex.matches(in: timestamp, options: [], range: NSRange(location: 0, length: timestamp.utf16.count))
                                 
                                 if let match = matches.first {
                                     let range = Range(match.range, in: timestamp)!
                                     let time = String(timestamp[range])
-                                    let route = currStation.route
-                                    print("Time:", time)
                                     
+                                    // Remove any random characters in number lines
+                                    var route = currStation.route
+                                    let charset = CharacterSet(charactersIn: "1234567")
+                                    if route.rangeOfCharacter(from: charset) != nil {
+                                        route = currStation.route.replacingOccurrences(of: charPattern, with: "", options: .regularExpression)
+                                    }
+
                                     DispatchQueue.main.async { [weak self] in
                                         self?.arrivalTime.text = time
-                                        self?.trainLabel.text = route
+                                        self?.trainLine.text = route
                                     }
                                     
                                 } else {
