@@ -21,7 +21,7 @@ Yourway is designed to fit your schedule, tracking the subway lines that you rid
 #### 1.1 User Stories (Required and Optional)
 Required Must-have Stories
 
-[] User can search for subway stops
+- [ ] User can search for subway stops
 - [ ] User can add subway stops
 - [ ] User can delete subway stops
 - [x] User can see view schedules of their subway line for their stop
