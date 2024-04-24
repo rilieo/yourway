@@ -9,7 +9,6 @@
 Yourway is designed to fit your schedule, tracking the subway lines that you ride the most. The app allows you to add subway lines in order to easily view schedules and updates.
 
 App Evaluation
-
     - Category: Travel
     - Mobile: People in NY regularly use their phone to search up subway lines and times. Tracking subways requires maps and user location to provide decisions on which subway to take.
     - Story: Allows users to easily access subway times of their regular commutes without having to search it up.
