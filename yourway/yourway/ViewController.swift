@@ -36,6 +36,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     private var db = Firestore.firestore()
     private var myStations : [Station] = []
     
+    @IBAction func addStop(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let searchAddViewController = storyboard.instantiateViewController(withIdentifier: "searchAddStop")
+        self.present(searchAddViewController, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -94,6 +100,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                     let station = Station(id: id!,
                                           name: name!,
                                           location: location!)
+                    
                     
                     self.myStations.append(station)
                 }

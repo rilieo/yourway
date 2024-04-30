@@ -22,11 +22,10 @@ Yourway is designed to fit your schedule, tracking the subway lines that you rid
 #### 1.1 User Stories (Required and Optional)
 Required Must-have Stories
 
-- [ ] User can search for subway stops
-- [ ] User can add subway stops
-- [ ] User can delete subway stops
 - [x] User can see view schedules of their subway line for their stop
     - What time the subway comes, and how many minutes until it comes
+- [x] User can see both downtown and uptown schedules
+- [x] User can see a map of the subway for reference
 
 #### 1.2 Optional Nice-to-have Stories
 - [ ] User can toggle between time of subway arrival, estimated time of arrival (in minutes), or both
@@ -129,7 +128,12 @@ Networking
 - Added API call and backend 
 - Fix UI
 - Implemented table view
-= Next steps: have add and delete functionality
 
 [Demo](https://imgur.com/a/Dx9o9IJ)
 
+### Week 3
+- Added both north and south direction at subway stops
+- Added a map for user if user wants to see a whole map
+- Next steps: Add rest of the stops in database and add search functionality
+
+[Demo](https://imgur.com/a/5RqyJoW)

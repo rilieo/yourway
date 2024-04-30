@@ -55,9 +55,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="1og-cj-abz" kind="show" id="oXz-k7-rdE"/>
+                                </connections>
                             </button>
                             <connections>
-                                <segue destination="1og-cj-abz" kind="show" id="qe3-Tv-TVW"/>
+                                <action selector="addStop:" destination="BYZ-38-t0r" id="gxA-b3-1yp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -77,16 +80,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VLP-4C-gek">
-                                <rect key="frame" x="76" y="207" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-AC-dM2">
+                                <rect key="frame" x="16" y="207" width="177" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rdL-AC-dM2">
-                                <rect key="frame" x="76" y="103" width="240" height="70"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6XG-xX-DqP">
+                                <rect key="frame" x="201" y="285" width="176" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VLP-4C-gek">
+                                <rect key="frame" x="16" y="285" width="177" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uptown" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O78-1g-Sew">
+                                <rect key="frame" x="16" y="154" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Downtown" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfq-zY-gyb">
+                                <rect key="frame" x="201" y="154" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0UH-wb-YVp">
+                                <rect key="frame" x="201" y="207" width="176" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -99,28 +132,30 @@
                     </view>
                     <navigationItem key="navigationItem" id="6QT-gv-YiW"/>
                     <connections>
-                        <outlet property="arrivalTime" destination="VLP-4C-gek" id="mih-dG-QJH"/>
-                        <outlet property="trainLine" destination="rdL-AC-dM2" id="MUj-H8-vXa"/>
+                        <outlet property="trainLineN" destination="rdL-AC-dM2" id="0er-Ho-w1Z"/>
+                        <outlet property="trainLineS" destination="0UH-wb-YVp" id="6uD-Kd-8hP"/>
+                        <outlet property="trainTimeN" destination="VLP-4C-gek" id="Ylb-mT-Sox"/>
+                        <outlet property="trainTimeS" destination="6XG-xX-DqP" id="LTm-N2-ZDU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFs-Yy-o6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2893.8931297709923" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Add Stop View Controller-->
         <scene sceneID="U4a-3J-2oC">
             <objects>
-                <viewController id="1og-cj-abz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchAddStop" id="1og-cj-abz" customClass="SearchAddStopViewController" customModule="yourway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IFj-IO-S65">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="Search for a stop" translatesAutoresizingMaskIntoConstraints="NO" id="i9O-vq-UMC">
-                                <rect key="frame" x="0.0" y="121" width="393" height="44"/>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for a stop" translatesAutoresizingMaskIntoConstraints="NO" id="yq9-0j-66h">
+                                <rect key="frame" x="0.0" y="120" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="1og-cj-abz" id="X6U-oa-vjN"/>
+                                    <outlet property="delegate" destination="1og-cj-abz" id="Fed-Na-EFB"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -131,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvI-rO-8Vk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="752"/>
+            <point key="canvasLocation" x="1874.0458015267175" y="751.4084507042254"/>
         </scene>
         <!--Your Stops-->
         <scene sceneID="kbX-rY-yno">
@@ -174,18 +209,27 @@
         <!--Map-->
         <scene sceneID="qNp-Pa-g3N">
             <objects>
-                <viewController id="ENF-dn-YRf" sceneMemberID="viewController">
+                <viewController id="ENF-dn-YRf" customClass="MapViewController" customModule="yourway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sOJ-Wc-cUW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tkb-yP-azD">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6DH-YB-6Mr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" id="Ywt-h3-8M1"/>
+                    <connections>
+                        <outlet property="mapImageView" destination="Tkb-yP-azD" id="EnT-l7-zhY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CgM-53-FDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="725"/>
+            <point key="canvasLocation" x="20.610687022900763" y="724.64788732394368"/>
         </scene>
     </scenes>
     <resources>

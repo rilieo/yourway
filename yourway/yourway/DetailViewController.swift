@@ -9,8 +9,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var trainLine: UITextView!
-    @IBOutlet weak var arrivalTime: UITextView!
+
+    @IBOutlet weak var trainLineN: UITextView!
+    @IBOutlet weak var trainTimeN: UITextView!
+    @IBOutlet weak var trainLineS: UITextView!
+    @IBOutlet weak var trainTimeS: UITextView!
     var stop: Station!
     
     override func viewDidLoad() {
@@ -44,43 +47,41 @@ class DetailViewController: UIViewController {
                 let subwayStops = try JSONDecoder().decode(Stop.self, from: data)
                 
                 let stationData = subwayStops.data
-                let timePattern = #"(\d{2}:\d{2})"#
-                let charPattern = #"[^\d\s]"#
                 
                 // Iterate through all 5 stations
                 for station in stationData {
                     if (station.name == self.stop.name) {
                         
                         // Display next train
-                        if let currStation = station.N.first {
-                            let timestamp = currStation.time
+                        if let currNStation = station.N.first {
                             
-                            do {
-                                // Parse time
-                                let regex = try NSRegularExpression(pattern: timePattern, options: [])
-                                let matches = regex.matches(in: timestamp, options: [], range: NSRange(location: 0, length: timestamp.utf16.count))
-                                
-                                if let match = matches.first {
-                                    let range = Range(match.range, in: timestamp)!
-                                    let time = String(timestamp[range])
-                                    
-                                    // Remove any random characters in number lines
-                                    var route = currStation.route
-                                    let charset = CharacterSet(charactersIn: "1234567")
-                                    if route.rangeOfCharacter(from: charset) != nil {
-                                        route = currStation.route.replacingOccurrences(of: charPattern, with: "", options: .regularExpression)
-                                    }
+                            let timestamp = currNStation.time.parseTime()
 
-                                    DispatchQueue.main.async { [weak self] in
-                                        self?.arrivalTime.text = time
-                                        self?.trainLine.text = route
-                                    }
-                                    
-                                } else {
-                                    print("Time not found.")
+                            // Parse time
+                            var route = currNStation.route
+                            let charset = CharacterSet(charactersIn: "1234567")
+                            if route.rangeOfCharacter(from: charset) != nil {
+                                route = currNStation.route.replacingOccurrences(of: #"[^\d\s]"#, with: "", options:     .regularExpression)
                                 }
-                            } catch {
-                                print("Regex error:", error)
+                            
+                            DispatchQueue.main.async { [weak self] in
+                                self?.trainTimeN.text = timestamp
+                                self?.trainLineN.text = route
+                            }
+                        }
+                        
+                        if let currSStation = station.S.first {
+                            let timestamp = currSStation.time.parseTime()
+                            
+                            var route = currSStation.route
+                            let charset = CharacterSet(charactersIn: "1234567")
+                            if route.rangeOfCharacter(from: charset) != nil {
+                                route = currSStation.route.replacingOccurrences(of: #"[^\d\s]"#, with: "", options:     .regularExpression)
+                            }
+                            
+                            DispatchQueue.main.async { [weak self] in
+                                self?.trainTimeS.text = timestamp
+                                self?.trainLineS.text = route
                             }
                         }
                     }
@@ -93,4 +94,27 @@ class DetailViewController: UIViewController {
         session.resume()
     }
 
+}
+
+extension String {
+    
+    func parseTime() -> String {
+        let timePattern = #"(\d{2}:\d{2})"#
+        
+        do {
+            let regex = try NSRegularExpression(pattern: timePattern, options: [])
+            let matches = regex.matches(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count))
+            
+            if let match = matches.first {
+                let range = Range(match.range, in: self)!
+                let time = String(self[range])
+                return time
+                
+            }
+        } catch {
+            print("Could not parse")
+        }
+        
+        return ""
+    }
 }

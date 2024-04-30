@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AB9693D2BE0BD00007E1B79 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9693C2BE0BD00007E1B79 /* MapViewController.swift */; };
+		9AB9693F2BE0BDC9007E1B79 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AB9693E2BE0BDC9007E1B79 /* map.jpg */; };
 		9AD66CA32BCE3101000746BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD66CA22BCE3101000746BE /* AppDelegate.swift */; };
 		9AD66CA52BCE3101000746BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD66CA42BCE3101000746BE /* SceneDelegate.swift */; };
 		9AD66CA72BCE3101000746BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD66CA62BCE3101000746BE /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9AB9693C2BE0BD00007E1B79 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9AB9693E2BE0BDC9007E1B79 /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		9AD66C9F2BCE3101000746BE /* yourway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yourway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD66CA22BCE3101000746BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AD66CA42BCE3101000746BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,8 +124,10 @@
 				9AD66CA22BCE3101000746BE /* AppDelegate.swift */,
 				9AD66CA42BCE3101000746BE /* SceneDelegate.swift */,
 				9AD66CA62BCE3101000746BE /* ViewController.swift */,
+				9AB9693E2BE0BDC9007E1B79 /* map.jpg */,
 				9AEB85032BD8724B006A90E5 /* DetailViewController.swift */,
 				9AD66CA82BCE3101000746BE /* Main.storyboard */,
+				9AB9693C2BE0BD00007E1B79 /* MapViewController.swift */,
 				9AEB85012BD86F66006A90E5 /* StationTableViewCell.swift */,
 				9AEB84F42BD85D33006A90E5 /* GoogleService-Info.plist */,
 				9AEB84F22BD713C6006A90E5 /* Stop.swift */,
@@ -263,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AB9693F2BE0BDC9007E1B79 /* map.jpg in Resources */,
 				9AD66CAF2BCE3102000746BE /* LaunchScreen.storyboard in Resources */,
 				9AEB84F52BD85D33006A90E5 /* GoogleService-Info.plist in Resources */,
 				9AD66CAC2BCE3102000746BE /* Assets.xcassets in Resources */,
@@ -297,6 +304,7 @@
 				9AEB85042BD8724B006A90E5 /* DetailViewController.swift in Sources */,
 				9AD66CA32BCE3101000746BE /* AppDelegate.swift in Sources */,
 				9AD66CA52BCE3101000746BE /* SceneDelegate.swift in Sources */,
+				9AB9693D2BE0BD00007E1B79 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
