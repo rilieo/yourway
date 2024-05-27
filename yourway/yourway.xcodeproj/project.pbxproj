@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A296FFB2C01854D00230BAF /* UptownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A296FFA2C01854D00230BAF /* UptownTableViewCell.swift */; };
+		9A296FFD2C01855D00230BAF /* DowntownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A296FFC2C01855D00230BAF /* DowntownTableViewCell.swift */; };
 		9AB9693D2BE0BD00007E1B79 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9693C2BE0BD00007E1B79 /* MapViewController.swift */; };
 		9AB9693F2BE0BDC9007E1B79 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AB9693E2BE0BDC9007E1B79 /* map.jpg */; };
 		9AD66CA32BCE3101000746BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD66CA22BCE3101000746BE /* AppDelegate.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A296FFA2C01854D00230BAF /* UptownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptownTableViewCell.swift; sourceTree = "<group>"; };
+		9A296FFC2C01855D00230BAF /* DowntownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntownTableViewCell.swift; sourceTree = "<group>"; };
 		9AB9693C2BE0BD00007E1B79 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9AB9693E2BE0BDC9007E1B79 /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		9AD66C9F2BCE3101000746BE /* yourway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yourway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,8 @@
 				9AD66CA82BCE3101000746BE /* Main.storyboard */,
 				9AB9693C2BE0BD00007E1B79 /* MapViewController.swift */,
 				9AEB85012BD86F66006A90E5 /* StationTableViewCell.swift */,
+				9A296FFC2C01855D00230BAF /* DowntownTableViewCell.swift */,
+				9A296FFA2C01854D00230BAF /* UptownTableViewCell.swift */,
 				9AEB84F42BD85D33006A90E5 /* GoogleService-Info.plist */,
 				9AEB84F22BD713C6006A90E5 /* Stop.swift */,
 				9AD66CAB2BCE3102000746BE /* Assets.xcassets */,
@@ -301,7 +307,9 @@
 				9AD66CA72BCE3101000746BE /* ViewController.swift in Sources */,
 				9AEB85022BD86F66006A90E5 /* StationTableViewCell.swift in Sources */,
 				9AEB84F32BD713C6006A90E5 /* Stop.swift in Sources */,
+				9A296FFD2C01855D00230BAF /* DowntownTableViewCell.swift in Sources */,
 				9AEB85042BD8724B006A90E5 /* DetailViewController.swift in Sources */,
+				9A296FFB2C01854D00230BAF /* UptownTableViewCell.swift in Sources */,
 				9AD66CA32BCE3101000746BE /* AppDelegate.swift in Sources */,
 				9AD66CA52BCE3101000746BE /* SceneDelegate.swift in Sources */,
 				9AB9693D2BE0BD00007E1B79 /* MapViewController.swift in Sources */,
