@@ -67,7 +67,7 @@ Flow Navigation (Screen to Screen)
 
 ### Wireframes
 
-![](wireframe.jpg)
+![](assets/wireframe.jpg)
 
 ### Schema
 
@@ -113,8 +113,8 @@ Networking
     - Request returns a JSON object that contains trains that run at the nearest 5 stops
     - For the stops that match the stop's name, we find the next train (currently just N) and parse the times
 
-![](networking_1.png)
-![](networking_2.png)
+![](assets/networking_1.png)
+![](assets/networking_2.png)
 
 ### Sprints
 #### Week 1
