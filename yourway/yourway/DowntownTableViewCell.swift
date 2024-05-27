@@ -9,6 +9,9 @@ import UIKit
 
 class DowntownTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var trainLine: UILabel!
+    @IBOutlet weak var trainTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
