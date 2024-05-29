@@ -1,29 +1,32 @@
-//
-//  SearchViewController.swift
-//  yourway
-//
-//  Created by Riley Dou on 5/28/24.
-//
-
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var stationsTableView: UITableView!
+    @IBOutlet weak var stopSearchBar: UISearchBar!
+    
+    var allStations: [Station] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        stationsTableView.dataSource = self
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allStations.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "allStationsTableViewCell", for: indexPath) as! AllStationsTableViewCell
+        
+        cell.allStationsLabel.text = allStations[indexPath.row].name
+        
+        return cell
     }
-    */
-
+    
+    
 }

@@ -1,10 +1,3 @@
-//
-//  DetailViewController.swift
-//  yourway
-//
-//  Created by Riley Dou on 4/23/24.
-//
-
 import UIKit
 
 struct TrainInfo {
@@ -12,32 +5,7 @@ struct TrainInfo {
     let line : String
 }
 
-class DetailViewController: UIViewController, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (tableView == uptownTrainsTableView) {
-            return NStations.count
-        }
-        
-        return SStations.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (tableView == uptownTrainsTableView) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "uptownTableViewCell", for: indexPath) as! UptownTableViewCell
-            
-            cell.trainLine.text = NStations[indexPath.row].line
-            cell.trainTime.text = NStations[indexPath.row].time
-            return cell
-        }
-            
-        let cell = tableView.dequeueReusableCell(withIdentifier: "downtownTableViewCell", for: indexPath) as! DowntownTableViewCell
-        
-        cell.trainLine.text = SStations[indexPath.row].line
-        cell.trainTime.text = SStations[indexPath.row].time
-        
-        return cell
-        
-    }
+class DetailViewController: UIViewController {
     
     @IBOutlet weak var uptownTrainsTableView: UITableView!
     @IBOutlet weak var downtownTrainsTableView: UITableView!
@@ -60,17 +28,17 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         
         let session = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("❌ Error: \(error.localizedDescription)")
+                print("Error: \(error.localizedDescription)")
                 return
             }
 
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, (200...299).contains(statusCode) else {
-                print("❌ Response error: \(String(describing: response))")
+                print("Response error: \(String(describing: response))")
                 return
             }
 
             guard let data = data else {
-                print("❌ Data is NIL")
+                print("Data is NIL")
                 return
             }
 
@@ -123,13 +91,41 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                     }
                 }
             } catch {
-                print("Error decoding JSON: \(error)")
+                print("Error decoding JSON: \(error.localizedDescription)")
                 return
             }
         }
         session.resume()
     }
 
+}
+
+extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (tableView == uptownTrainsTableView) {
+            return NStations.count
+        }
+        
+        return SStations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (tableView == uptownTrainsTableView) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "uptownTableViewCell", for: indexPath) as! UptownTableViewCell
+            
+            cell.trainLine.text = NStations[indexPath.row].line
+            cell.trainTime.text = NStations[indexPath.row].time
+            return cell
+        }
+            
+        let cell = tableView.dequeueReusableCell(withIdentifier: "downtownTableViewCell", for: indexPath) as! DowntownTableViewCell
+        
+        cell.trainLine.text = SStations[indexPath.row].line
+        cell.trainTime.text = SStations[indexPath.row].time
+        
+        return cell
+        
+    }
 }
 
 extension String {

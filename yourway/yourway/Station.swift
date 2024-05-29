@@ -1,8 +1,7 @@
-//
-//  Station.swift
-//  yourway
-//
-//  Created by Riley Dou on 5/28/24.
-//
-
 import Foundation
+
+struct Station {
+    let id: String
+    let location: [Double]
+    let name: String
+}
