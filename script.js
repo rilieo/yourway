@@ -21,11 +21,10 @@ const db = getFirestore(app);
 const collectionName = "allStations";
 
 class subwayStation {
-    constructor(id, location, name, stops) {
+    constructor(id, location, name) {
         this.id = id;
         this.location = location;
         this.name = name;
-        this.stops = stops;
     }
 
     async save() {
@@ -34,7 +33,6 @@ class subwayStation {
                 id: this.id,
                 location: this.location,
                 name: this.name,
-                stops: this.stops
             });
         }
         catch (e) {
@@ -59,8 +57,8 @@ class subwayStation {
     }
 }
 
-
 for (let station in stations) {
-    const newStation = new subwayStation(stations[station].id, stations[station].location, stations[station].name, stations[station].stops);
+    const newStation = new subwayStation(stations[station].id, stations[station].location, stations[station].name);
     newStation.save();
 }
+
