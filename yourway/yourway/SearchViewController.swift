@@ -1,24 +1,18 @@
 //
-//  MapViewController.swift
+//  SearchViewController.swift
 //  yourway
 //
-//  Created by Riley Dou on 4/30/24.
+//  Created by Riley Dou on 5/28/24.
 //
 
 import UIKit
 
-class MapViewController: UIViewController {
+class SearchViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var mapImageView: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var yourImage: UIImage = UIImage(named: "map.jpg")!
-        mapImageView.image = yourImage
-
     }
     
 

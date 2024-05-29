@@ -1,5 +1,5 @@
 //
-//  StationTableViewCell.swift
+//  AllStationsTableViewCell.swift
 //  yourway
 //
 //  Created by Riley Dou on 5/28/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StationTableViewCell: UITableViewCell {
+class AllStationsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
