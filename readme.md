@@ -5,7 +5,7 @@
 1. [Wireframes](#wireframes)
 1. [Schema](#schema)
 1. [Sprints](#sprints)
-1. [Final-ish Demo](#final-ish-demo)
+1. [Final ish Demo](#final-ish-demo)
 
 ### Overview
 #### 1. Description:
