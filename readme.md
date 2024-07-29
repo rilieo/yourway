@@ -26,10 +26,11 @@ Required Must-have Stories
 - [x] User can see view schedules of their subway line for their stop
     - What time the subway comes, and how many minutes until it comes
 - [x] User can see both downtown and uptown schedules
-- [x] User can see a map of the subway for reference
+- [x] User can search for stops and add them
+- [x] User can delete stops
 
 #### 1.2 Optional Nice-to-have Stories
-- [ ] User can toggle between time of subway arrival, estimated time of arrival (in minutes), or both
+- [x] User can toggle between time of subway arrival, estimated time of arrival (in minutes), or both
 - [ ] User can view the entire subway map and each station's schedules.
 - [ ] User can get notifications to leave in 5 minutes, in 2 minutes, etc.
 
